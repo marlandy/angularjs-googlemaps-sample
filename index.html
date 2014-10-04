@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="AngularGoogleMap" >
+    <head>
+        <meta charset="utf-8">
+        <title>AngularJS / Google Maps Tutorial</title>
+
+        <link href="css/style.css" rel="stylesheet"/>
+
+        <!-- AngularJS -->
+        <script src="js/lib/angularjs.min.js?v=1.2.26"></script>
+
+        <!-- angular-google-maps -->
+        <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+        <script src="js/lib/lodash.underscore.min.js?v=2.4.1"></script>
+        <script src="js/lib/angular-google-maps.min.js?v=1.2.2"></script>
+
+        <!-- Custom angular module -->
+        <script src="js/map.js?v=1.0"></script>
+    </head>
+    <body ng-controller="MapCtrl">
+        <h1>ANGULARJS / GOOGLE MAPS EXAMPLE</h1>
+        <div class="map_container" >
+            <google-map center="map.center" zoom="map.zoom" draggable="true" options="map.options" control="map.control">
+                <markers models="map.markers" coords="'self'" click="'onClicked'" options="'options'" events="markersEvents" isLabel='true'>
+                </markers>
+            </google-map>
+        </div>  
+        <div class="controls">
+            <h3>Current location</h3>
+            <p>
+            <button ng-click="addCurrentLocation()">Current location</button>                
+            </p>
+            <h3>Address search</h3>
+            <p>
+                <input type="text" placeholder="Address. i.e: Concha Espina 1, Madrid" ng-model="address" style="width: 210px"/>
+            <button ng-click="addAddress()">Look up!</button>    
+            </p>
+            
+        </div>
+
+    </body>
+</html>
