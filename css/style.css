@@ -2,6 +2,8 @@ html, body, div.map_container {
     height: 100%;
     width: 100%;
     margin: 0px;
+    font-family: comic Sans MS, verdana, sans-serif;
+    background: #fafafa;
 }
 
 div.map_container {
@@ -32,3 +34,13 @@ div.controls {
     background: #fff;
     color: #333;
 }
+
+h3 {
+    margin: 0 20px;
+}
+
+p {    
+    margin-top: 20px;
+    padding: 0 0 50px 20px;
+}
+
