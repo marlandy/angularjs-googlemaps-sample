@@ -34,8 +34,8 @@ app.factory('MarkerCreatorService', function () {
         geocoder.geocode({'address' : address}, function (results, status) {
             if (status === google.maps.GeocoderStatus.OK) {
                 var firstAddress = results[0];
-                var latitude = firstAddress.geometry.location.k;
-                var longitude = firstAddress.geometry.location.B;
+                var latitude = firstAddress.geometry.location.lat();
+                var longitude = firstAddress.geometry.location.lng();
                 var marker = create(latitude, longitude);
                 invokeSuccessCallback(successCallback, marker);
             } else {
@@ -69,7 +69,7 @@ app.controller('MapCtrl', ['MarkerCreatorService', '$scope', function (MarkerCre
             marker.options.labelContent = 'Autentia';
             $scope.autentiaMarker = marker;
         });
-
+        
         $scope.address = '';
 
         $scope.map = {
